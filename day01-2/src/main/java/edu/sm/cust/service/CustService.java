@@ -1,0 +1,31 @@
+package edu.sm.cust.service;
+
+import edu.sm.dto.Cust;
+import edu.sm.frame.SMRepository;
+import edu.sm.frame.SMService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+@Service("cservice")
+public class CustService implements SMService<String, Cust> {
+
+    @Autowired
+    SMRepository<String, Cust> repository;
+
+    @Override
+    public void register(Cust cust) {
+
+        repository.insert(cust);
+    }
+
+    @Override
+    public void modify(Cust cust) {
+        repository.update(cust);
+    }
+
+    @Override
+    public void remove(String s) {
+        repository.delete(s);
+    }
+}
