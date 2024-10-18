@@ -6,7 +6,19 @@
 
 
     <select id="findByName" resultType="CustDto" parameterType="String">
-        SELECT * FROM cust WHERE cust_name LIKE CONCAT('%', #{name}, '%')
+        SELECT * FROM cust WHERE name LIKE CONCAT('%', #{name}, '%')
+    </select>
+    <select id="getpage" resultType="custDto">
+        SELECT * FROM cust
+    </select>
+    <select id="getfindpage" resultType="custDto" parameterType="search">
+        SELECT * FROM cust WHERE 1=1
+        <if test="keyword == 'id'">
+            AND cust_id LIKE CONCAT('%', #{search}, '%')
+        </if>
+        <if test="keyword == 'name'">
+            AND cust_name LIKE CONCAT('%', #{search}, '%')
+        </if>
     </select>
 
 

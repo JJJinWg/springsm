@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sm.app.repository.CarRepository">
+
+    <!-- 이름으로 검색 -->
+    <select id="findByName" resultType="edu.sm.app.dto.CarDto" parameterType="String">
+        SELECT * FROM car WHERE car_name LIKE CONCAT('%', #{name}, '%')
+    </select>
+
+    <!-- ID로 검색 -->
+    <select id="selectOne" parameterType="String" resultType="edu.sm.app.dto.CarDto">
+        SELECT * FROM car WHERE car_id = #{id}
+    </select>
+
+    <!-- 전체 조회 -->
+    <select id="select" resultType="edu.sm.app.dto.CarDto">
+        SELECT * FROM car
+    </select>
+
+    <!-- 삽입 -->
+    <insert id="insert" parameterType="edu.sm.app.dto.CarDto">
+        INSERT INTO car (car_id, car_pwd, car_name)
+        VALUES (#{carId}, #{carPwd}, #{carName})
+    </insert>
+
+    <!-- 업데이트 -->
+    <update id="update" parameterType="edu.sm.app.dto.CarDto">
+        UPDATE car
+        SET car_pwd = #{carPwd}, car_name = #{carName}
+        WHERE car_id = #{carId}
+    </update>
+
+    <!-- 삭제 -->
+    <delete id="delete" parameterType="String">
+        DELETE FROM car WHERE car_id = #{id}
+    </delete>
+
+</mapper>

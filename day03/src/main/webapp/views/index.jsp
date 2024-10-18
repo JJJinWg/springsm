@@ -22,13 +22,6 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <%--HighCharts Lib  end --%>
 
-    <%--HighCharts Basic  end --%>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-        <%--HighCharts Basic  end --%>
-
     <style>
         .fakeimg {
             height: 200px;
@@ -40,8 +33,8 @@
 
 <div class="jumbotron text-center" style="margin-bottom:0">
     <h1>My First Bootstrap 4 Page</h1>
-    <img src="<c:url value="/img/sm.jpg"/>">
-    <img src="<c:url value="/imgs/car.jpg"/>">
+    <img src="<c:url value="/img/sm.jpg"/> ">
+    <img src="<c:url value="/imgs/car.jpg"/> ">
     <p>Resize this responsive page to see the effect!</p>
 </div>
 <ul class="nav justify-content-end">
@@ -59,7 +52,7 @@
         </c:when>
         <c:otherwise>
             <li class="nav-item">
-                <a class="nav-link" href="#">${sessionScope.loginid}</a>
+                <a class="nav-link" href="#">${sessionScope.loginid.custId}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/logoutimpl"/>">Logout</a>
@@ -89,12 +82,15 @@
                 <a class="nav-link" href="<c:url value="/chart"/> ">Chart</a>
             </li>
             <c:if test="${sessionScope.loginid != null}">
-                <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/cust"/> ">Cust</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/item"/> ">Item</a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/cust"/> ">Cust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/item"/> ">Item</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/car/"/> ">Car</a>
+            </li>
             </c:if>
         </ul>
     </div>

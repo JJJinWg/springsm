@@ -17,7 +17,7 @@ class InsertTest {
 
     @Test
     void contextLoads() {
-        ItemDto itemDto = ItemDto.builder().itemName("상의3").itemPrice(10000).imgName("a.jpg").build();
+        ItemDto itemDto = ItemDto.builder().itemName("pants2").itemPrice(20000).imgName("a2.jpg").build();
         try {
             itemService.add(itemDto);
         } catch (Exception e) {
