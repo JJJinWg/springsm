@@ -5,8 +5,20 @@
 <mapper namespace="edu.sm.app.repository.ItemRepository">
 
 
-    <select id="findByName" resultType="itemDto" parameterType="String">
-        SELECT * FROM item WHERE item_name LIKE CONCAT('%', #{name}, '%')
+    <select id="findByName" resultType="ItemDto" parameterType="String">
+        SELECT * FROM item WHERE name LIKE CONCAT('%', #{name}, '%')
+    </select>
+    <select id="getpage" resultType="itemDto">
+        SELECT * FROM item
+    </select>
+    <select id="getfindpage" resultType="itemDto" parameterType="search">
+        SELECT * FROM item WHERE 1=1
+        <if test="keyword == 'id'">
+            AND item_id LIKE CONCAT('%', #{search}, '%')
+        </if>
+        <if test="keyword == 'name'">
+            AND item_name LIKE CONCAT('%', #{search}, '%')
+        </if>
     </select>
 
 

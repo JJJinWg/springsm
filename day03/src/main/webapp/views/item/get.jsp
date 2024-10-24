@@ -1,39 +1,49 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<style>
-  #item_img{
-    width:80px;
-  }
-</style>
+<h2>Item List</h2>
 
-
-<div class="col-sm-10">
-  <h2>Item Get Page</h2>
-  <h5>Title description, Sep 2, 2017</h5>
-  <table class="table">
-    <thead class="thead-dark">
+<table class="table">
+  <thead>
+  <tr>
+    <th>Image</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>RegDate</th>
+  </tr>
+  </thead>
+  <tbody>
+  <c:forEach var="item" items="${items}">
     <tr>
-      <th>Image</th>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>RegDate</th>
+      <td><img src="<c:url value='/img/${item.imgname}'/>" alt="${item.name}" width="50"></td>
+      <td>${item.id}</td>
+      <td>${item.name}</td>
+      <td>${item.price}</td>
+      <td>${item.regdate}</td>
     </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="c" items="${items}">
-      <tr>
-        <td><img id="item_img" src="<c:url value="/img"/>/${c.imgname}"></td>
-        <td>${c.id}</td>
-        <td>${c.name}</td>
-        <td><fmt:formatNumber type="number" pattern="###,###원" value="${c.price}" />
-        </td>
-        <td><fmt:formatDate  value="${c.regdate}" pattern="yyyy년MM월dd일" />
-        </td>
-      </tr>
-    </c:forEach>
-    </tbody>
-  </table>
+  </c:forEach>
+  </tbody>
+</table>
+
+<!-- 페이지네이션 -->
+<div class="pagination">
+  <c:if test="${currentPage > 1}">
+    <a href="?pageNo=${currentPage - 1}">Previous</a>
+  </c:if>
+
+  <c:forEach begin="1" end="${totalItems / itemsPerPage + 1}" var="i">
+    <c:choose>
+      <c:when test="${i == currentPage}">
+        <strong>${i}</strong>
+      </c:when>
+      <c:otherwise>
+        <a href="?pageNo=${i}">${i}</a>
+      </c:otherwise>
+    </c:choose>
+  </c:forEach>
+
+  <c:if test="${currentPage * itemsPerPage < totalItems}">
+    <a href="?pageNo=${currentPage + 1}">Next</a>
+  </c:if>
 </div>

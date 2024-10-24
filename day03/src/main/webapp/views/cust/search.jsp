@@ -49,4 +49,8 @@
     </c:forEach>
     </tbody>
   </table>
+
+  <c:if test="${cpage.getSize() != null}">
+    <jsp:include page="../searchnav.jsp"/>
+  </c:if>
 </div>

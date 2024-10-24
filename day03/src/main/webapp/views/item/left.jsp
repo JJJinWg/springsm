@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="col-sm-2">
-
     <h3>Item</h3>
     <ul class="nav nav-pills flex-column">
         <li class="nav-item">
@@ -10,6 +9,9 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="<c:url value="/item/get"/>">Get</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<c:url value="/item/search"/>">Search</a> <!-- Search 항목 추가 -->
         </li>
     </ul>
     <hr class="d-sm-none">
