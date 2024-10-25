@@ -82,15 +82,15 @@
                 <a class="nav-link" href="<c:url value="/chart"/> ">Chart</a>
             </li>
             <c:if test="${sessionScope.loginid != null}">
-            <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/cust"/> ">Cust</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/item"/> ">Item</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/car/"/> ">Car</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/cust"/> ">Cust</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/item"/> ">Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/webcam"/> ">WebCam</a>
+                </li>
             </c:if>
         </ul>
     </div>

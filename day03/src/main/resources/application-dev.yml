@@ -17,8 +17,8 @@ spring:
     url: jdbc:log4jdbc:mysql://127.1.0.1:3306/smdb?characterEncoding=utf8
     #driver-class-name: com.mysql.cj.jdbc.Driver
     #url: jdbc:mysql://127.0.0.1:3306/smdb?characterEncoding=utf8
-    username: smuser
-    password: 111111
+    username: ENC(OAjB56HlNziHqNDu8ZFSAw==)
+    password: ENC(zYoWFnp8CokAEj/HgST7Tw==)
 
 # 3. Mybatis Setting
 mybatis:
@@ -36,6 +36,15 @@ logging:
 app:
   dir:
     imgdir: file:///c:/springsm/imgs/
-    # logdir: /root/users/project/logs
+    uploadimgdir: c:/springsm/imgs/
     logdir: file:///c:/springsm/logs/
     readlogdir: c:/springsm/logs/
+  key:
+    wkey: ENC(QmlC8gL2fpunNJdQEokuDoWRNmLFAemoZKYajRCLnQYSq/jCQl/m98oY+WgxioL8sJoPmRYYkLbea2NGNkRzRcwSCY0DLq/rswmfS1cbq4GyOqu6aAsp0qiBFw6xw6th6YBw1zbz1w414gW4M0VBYA==)
+    wkey2: ENC(iT7fPLZjZqcAGuTbiTrxIexdf75/D5Lgm5v787FW1Lynleh/ob/IKmYwQo92Nugc)
+
+
+
+
+
+
