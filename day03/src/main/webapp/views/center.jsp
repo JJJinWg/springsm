@@ -21,7 +21,7 @@
           resultHtml += '<h3>'+temp+'<h3>';
           $('#wh2').html(resultHtml);
 
-        }w
+        }
       });
     }
   };
