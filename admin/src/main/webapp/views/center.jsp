@@ -60,7 +60,7 @@
                     $.ajax({
                         url:'<c:url value="/charts/chart1"/>',
                         success:(datas)=>{
-                            // console.log(new Date(datas.endtime).getTime()+'  :  '+datas.endline);
+                            console.log(new Date(datas.endtime).getTime()+'  :  '+datas.endline);
                             series.addPoint([new Date(datas.endtime).getTime(), datas.endline],
                                 true, true);
                         }
@@ -217,7 +217,7 @@
     };
     $(function(){
         center.init();
-        //center_websocket.init();
+        center_websocket.init();
     });
 </script>
 

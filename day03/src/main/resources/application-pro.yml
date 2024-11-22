@@ -13,12 +13,10 @@ spring:
       prefix: /views/
       suffix: .jsp
   datasource:
-    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mysql://127.1.0.1:3306/smdb?characterEncoding=utf8
-    #driver-class-name: com.mysql.cj.jdbc.Driver
-    #url: jdbc:mysql://127.0.0.1:3306/smdb?characterEncoding=utf8
-    username: ENC(OAjB56HlNziHqNDu8ZFSAw==)
-    password: ENC(zYoWFnp8CokAEj/HgST7Tw==)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://211.188.49.211:3306/smdb?characterEncoding=utf8
+    username: smuser
+    password: Smu1212!!
 
 # 3. Mybatis Setting
 mybatis:
@@ -36,19 +34,16 @@ logging:
 app:
   url:
     server-url: http://210.119.34.223:81
-    chatbot: https://3vd0tljt1i.apigw.ntruss.com/custom/v1/16308/666a97771dda26840dabd3b6e7f98189d7ea6fe4ea0d799e38296158475cc917
   dir:
-    imgdir: file:///c:/springsm/imgs/
-    uploadimgdir: c:/springsm/imgs/
-    logdir: file:///c:/springsm/logs/
-    readlogdir: c:/springsm/logs/
+    imgdir: /root/imgs
+    uploadimgdir: /root/imgs/
+    logdir: /root/logs
+    readlogdir: /root/logs
   key:
-    chatbot: aHF5dWtHV0hpcHpUa090WG54VGlkTXdwVmh3bnNvWGg=
     wkey: ENC(QdOsjLohLq1MPwpHZYB9hMyr+NY0bXXyORg1vRQEnmXS59mZAkg+vRNof9FFPDLTkMZLaMkMQ9NHNu8bI2/ZJQFb304B3s/MIJnouj5n9u9qUhyp2smp4mXRaqQz3KdpVmVZZSxLehC6Le73m78zGA==)
     wkey2: ENC(AGzLAgsPMOJE5zDYsXEricMGvjB/S1GVF2ZFRTuO9qjnlj/sMv6d/xF0pAuzWJkn)
     algo: PBEWithMD5AndDES
     skey: mykey
-    kakao_rest_key: d5ea9e63ea485df68f54054790eb911d
 
 
 
