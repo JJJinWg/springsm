@@ -1,6 +1,6 @@
 # 1. Tomcat Server Setting
 server:
-  port: 81
+  port: 83
   servlet:
     encoding:
       charset: UTF-8
